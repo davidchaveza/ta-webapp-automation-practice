@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80">
+<rect width="240" height="80" rx="16" fill="#1d4ed8"/>
+<circle cx="42" cy="40" r="20" fill="#bfdbfe"/>
+<path d="M38 33c2-6 10-6 12 0M32 39c-3-8-11-9-14-2M53 39c4-7 12-5 13 2" stroke="#1d4ed8" stroke-width="3" fill="none"/>
+<text x="72" y="49" font-size="28" font-family="Arial" fill="white">Happy Pet</text>
+</svg>

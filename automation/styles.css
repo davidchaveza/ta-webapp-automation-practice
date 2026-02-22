@@ -1,0 +1,113 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --primary: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --text: #1f2937;
+  --success: #16a34a;
+  --warn: #ca8a04;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(140deg, #eff6ff, #f8fafc);
+  color: var(--text);
+}
+header {
+  background: #0f172a;
+  color: white;
+  padding: 1rem 1.5rem;
+}
+nav a {
+  color: #bfdbfe;
+  margin-right: 1rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+nav a:hover { color: #fff; }
+main {
+  max-width: 980px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  margin-bottom: 1rem;
+}
+input, select, textarea, button {
+  width: 100%;
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover { background: var(--primary-dark); }
+.result {
+  margin-top: 0.7rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  background: #eef2ff;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 30px;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #94a3b8;
+  border-radius: 999px;
+  transition: .2s;
+}
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  top: 4px;
+  border-radius: 50%;
+  background: #fff;
+  transition: .2s;
+}
+input:checked + .slider { background: var(--success); }
+input:checked + .slider:before { transform: translateX(24px); }
+.drop-zone {
+  border: 2px dashed #94a3b8;
+  border-radius: 12px;
+  padding: 1.2rem;
+  min-height: 120px;
+  text-align: center;
+  background: #f8fafc;
+}
+.draggable {
+  display: inline-block;
+  margin: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: #dbeafe;
+  cursor: grab;
+}
+.inline { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
+.small { font-size:0.85rem; color:#475569; }

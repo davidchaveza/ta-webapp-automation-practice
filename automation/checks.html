@@ -1,0 +1,8 @@
+<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Checks</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><h1>Automation Playground</h1><nav><a href="index.html">Login</a><a href="radios.html">Radios</a><a href="checks.html">Checks</a><a href="registro.html">Registro</a><a href="toggles.html">Toggles</a><a href="dragdrop.html">Drag & Drop</a><a href="multiselect.html">Multi Select</a></nav></header>
+<main><section class="card"><h2>Selecciona habilidades</h2>
+<label><input type="checkbox" value="selenium" data-testid="check-selenium"> Selenium</label><br>
+<label><input type="checkbox" value="playwright" data-testid="check-playwright"> Playwright</label><br>
+<label><input type="checkbox" value="cypress" data-testid="check-cypress"> Cypress</label>
+<button id="collect">Validar</button><div id="result" class="result" data-testid="check-result"></div>
+</section></main><script>collect.onclick=()=>{const picks=[...document.querySelectorAll('input[type="checkbox"]:checked')].map(i=>i.value);result.textContent=picks.length?`Seleccionaste: ${picks.join(', ')}`:'No seleccionaste opciones';};</script></body></html>

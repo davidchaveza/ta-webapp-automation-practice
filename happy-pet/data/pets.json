@@ -1,0 +1,26 @@
+[
+  {
+    "id": "A-101",
+    "name": "Luna",
+    "type": "Perro",
+    "age": "2 años",
+    "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=60",
+    "description": "Cariñosa y lista para una familia activa"
+  },
+  {
+    "id": "A-102",
+    "name": "Milo",
+    "type": "Gato",
+    "age": "1 año",
+    "image": "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=800&q=60",
+    "description": "Tranquilo y compañero ideal para apartamento"
+  },
+  {
+    "id": "A-103",
+    "name": "Coco",
+    "type": "Conejo",
+    "age": "8 meses",
+    "image": "https://images.unsplash.com/photo-1535241749838-299277b6305f?auto=format&fit=crop&w=800&q=60",
+    "description": "Curioso y perfecto para niños"
+  }
+]

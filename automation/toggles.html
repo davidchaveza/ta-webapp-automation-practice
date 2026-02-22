@@ -1,0 +1,7 @@
+<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Toggles</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><h1>Automation Playground</h1><nav><a href="index.html">Login</a><a href="radios.html">Radios</a><a href="checks.html">Checks</a><a href="registro.html">Registro</a><a href="toggles.html">Toggles</a><a href="dragdrop.html">Drag & Drop</a><a href="multiselect.html">Multi Select</a></nav></header>
+<main><section class="card"><h2>Notificaciones</h2>
+<div class="inline"><span>Email</span><label class="switch"><input type="checkbox" id="t1" data-testid="toggle-email"><span class="slider"></span></label></div>
+<div class="inline"><span>SMS</span><label class="switch"><input type="checkbox" id="t2" data-testid="toggle-sms"><span class="slider"></span></label></div>
+<button id="save">Guardar</button><div class="result" id="result"></div>
+</section></main><script>save.onclick=()=>{result.textContent=`Email: ${t1.checked?'ON':'OFF'} | SMS: ${t2.checked?'ON':'OFF'}`}</script></body></html>

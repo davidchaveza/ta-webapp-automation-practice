@@ -1,0 +1,8 @@
+<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Multi Select</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><h1>Automation Playground</h1><nav><a href="index.html">Login</a><a href="radios.html">Radios</a><a href="checks.html">Checks</a><a href="registro.html">Registro</a><a href="toggles.html">Toggles</a><a href="dragdrop.html">Drag & Drop</a><a href="multiselect.html">Multi Select</a></nav></header>
+<main><section class="card"><h2>Selecciona entornos de prueba</h2>
+<select id="envs" multiple size="5" data-testid="multi-envs">
+<option value="dev">Dev</option><option value="qa">QA</option><option value="staging">Staging</option><option value="prod-mirror">Prod Mirror</option><option value="mobile-lab">Mobile Lab</option>
+</select>
+<button id="show">Mostrar seleccionados</button><div id="result" class="result"></div>
+</section></main><script>show.onclick=()=>{const vals=[...envs.selectedOptions].map(o=>o.value);result.textContent=vals.length?vals.join(' | '):'Sin entornos';}</script></body></html>
