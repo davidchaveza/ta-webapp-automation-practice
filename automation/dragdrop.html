@@ -1,0 +1,32 @@
+<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Drag & Drop</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><h1>Automation Playground</h1><nav><a href="index.html">Login</a><a href="radios.html">Radios</a><a href="checks.html">Checks</a><a href="registro.html">Registro</a><a href="toggles.html">Toggles</a><a href="dragdrop.html">Drag & Drop</a><a href="multiselect.html">Multi Select</a></nav></header>
+<main>
+<section class="card">
+<h2>Arrastrar y soltar etiquetas</h2>
+<div id="pool" class="drop-zone" data-testid="drop-pool">
+  <span class="draggable" draggable="true" id="tag-1" data-testid="drag-1">Alta prioridad</span>
+  <span class="draggable" draggable="true" id="tag-2" data-testid="drag-2">Media prioridad</span>
+</div>
+<div id="target" class="drop-zone" data-testid="drop-target">Suelta aquí</div>
+<div class="result" id="result">Movidos: 0</div>
+</section>
+</main>
+<script>
+let moved = 0;
+document.querySelectorAll('.draggable').forEach(el => {
+  el.addEventListener('dragstart', ev => ev.dataTransfer.setData('text/plain', ev.target.id));
+});
+const target = document.getElementById('target');
+target.addEventListener('dragover', e => e.preventDefault());
+target.addEventListener('drop', e => {
+  e.preventDefault();
+  const id = e.dataTransfer.getData('text/plain');
+  const item = document.getElementById(id);
+  if (item && target !== item.parentElement) {
+    target.appendChild(item);
+    moved += 1;
+    result.textContent = `Movidos: ${moved}`;
+  }
+});
+</script>
+</body></html>

@@ -1,0 +1,9 @@
+<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Registro</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><h1>Automation Playground</h1><nav><a href="index.html">Login</a><a href="radios.html">Radios</a><a href="checks.html">Checks</a><a href="registro.html">Registro</a><a href="toggles.html">Toggles</a><a href="dragdrop.html">Drag & Drop</a><a href="multiselect.html">Multi Select</a></nav></header>
+<main><section class="card"><h2>Formulario de registro</h2><form id="registerForm">
+<input id="fullName" placeholder="Nombre completo" data-testid="reg-name" required>
+<input id="email" type="email" placeholder="correo@email.com" data-testid="reg-email" required>
+<select id="country" data-testid="reg-country"><option value="">Pais</option><option>Perú</option><option>Colombia</option><option>México</option></select>
+<textarea id="notes" placeholder="Notas"></textarea>
+<button type="submit" data-testid="reg-submit">Enviar</button></form><div id="result" class="result"></div>
+</section></main><script>registerForm.addEventListener('submit',e=>{e.preventDefault();result.textContent=`Registro recibido para ${fullName.value} (${email.value})`;});</script></body></html>

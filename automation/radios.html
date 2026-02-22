@@ -1,0 +1,8 @@
+<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Radios</title><link rel="stylesheet" href="styles.css"></head><body>
+<header><h1>Automation Playground</h1><nav><a href="index.html">Login</a><a href="radios.html">Radios</a><a href="checks.html">Checks</a><a href="registro.html">Registro</a><a href="toggles.html">Toggles</a><a href="dragdrop.html">Drag & Drop</a><a href="multiselect.html">Multi Select</a></nav></header>
+<main><section class="card"><h2>Preferencia de navegador</h2>
+<label><input type="radio" name="browser" value="chrome" data-testid="radio-chrome"> Chrome</label><br>
+<label><input type="radio" name="browser" value="firefox" data-testid="radio-firefox"> Firefox</label><br>
+<label><input type="radio" name="browser" value="edge" data-testid="radio-edge"> Edge</label>
+<button id="send">Guardar selección</button><div id="result" class="result" data-testid="radio-result">Sin selección</div>
+</section></main><script>document.getElementById('send').onclick=()=>{const sel=document.querySelector('input[name="browser"]:checked');document.getElementById('result').textContent=sel?`Elegiste ${sel.value}`:'Debes elegir un navegador';};</script></body></html>

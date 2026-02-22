@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automation Playground - Inicio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Automation Playground</h1>
+  <nav>
+    <a href="index.html">Login</a>
+    <a href="radios.html">Radios</a>
+    <a href="checks.html">Checks</a>
+    <a href="registro.html">Registro</a>
+    <a href="toggles.html">Toggles</a>
+    <a href="dragdrop.html">Drag & Drop</a>
+    <a href="multiselect.html">Multi Select</a>
+    <a href="../happy-pet/index.html">Happy Pet</a>
+  </nav>
+</header>
+<main>
+  <section class="card">
+    <h2>Login básico</h2>
+    <label>Usuario
+      <input id="username" data-testid="username" placeholder="automation.user">
+    </label>
+    <label>Contraseña
+      <input id="password" data-testid="password" type="password" placeholder="123456">
+    </label>
+    <button id="loginBtn" data-testid="login-btn">Iniciar sesión</button>
+    <div id="loginResult" class="result" data-testid="login-result">Esperando acción...</div>
+  </section>
+</main>
+<script>
+  const validUser = 'automation.user';
+  const validPass = '123456';
+  document.getElementById('loginBtn').addEventListener('click', () => {
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+    const out = document.getElementById('loginResult');
+    out.textContent = user === validUser && pass === validPass
+      ? 'Login exitoso para pruebas.'
+      : 'Credenciales inválidas.';
+  });
+</script>
+</body>
+</html>

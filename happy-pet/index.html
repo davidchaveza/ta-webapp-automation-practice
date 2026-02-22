@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Happy Pet - E2E Practice</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <img src="assets/logo.svg" alt="Happy Pet logo">
+    <nav>
+      <a href="#login">Login</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#adopcion">Adopción</a>
+      <a href="#checkout">Checkout</a>
+      <a href="../automation/index.html">Automation básico</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <h1>Tienda Happy Pet para practicar automation testing</h1>
+    <p>Flujos E2E sin persistencia: login, catálogo dinámico por JSON, carrito, adopción y pagos simulados.</p>
+  </section>
+
+  <section id="login" class="grid-2">
+    <article class="card"><div class="body">
+      <h2>Login simulado</h2>
+      <form id="loginForm">
+        <label>Usuario<input id="loginUser" data-testid="login-user" placeholder="happy.tester"></label>
+        <label>Contraseña<input id="loginPass" type="password" data-testid="login-pass" placeholder="Happy123*"></label>
+        <button type="submit" data-testid="login-submit">Ingresar</button>
+      </form>
+      <div class="state" id="loginStatus" data-testid="login-state">Sin autenticar.</div>
+    </div></article>
+
+    <article class="card"><div class="body">
+      <h3>Credenciales de prueba</h3>
+      <ul>
+        <li><strong>Válido:</strong> happy.tester / Happy123*</li>
+        <li><strong>Bloqueado:</strong> cliente.bloqueado / Happy123*</li>
+        <li><strong>Inválido:</strong> cualquier otro</li>
+      </ul>
+      <h3>Tarjetas/métodos</h3>
+      <ul>
+        <li>4111111111111111 (tarjeta aprobada)</li>
+        <li>4000000000000002 (tarjeta declinada)</li>
+        <li>9999000011112222 (Happy Pet Puntos aprobada)</li>
+        <li>9999000011110000 (Happy Pet Puntos bloqueada)</li>
+      </ul>
+    </div></article>
+  </section>
+
+  <section id="tienda">
+    <h2>Catálogo de productos</h2>
+    <div class="card-grid" id="productsContainer"></div>
+  </section>
+
+  <section id="adopcion" class="grid-2">
+    <article>
+      <h2>Mascotas en adopción</h2>
+      <div class="card-grid" id="petsContainer"></div>
+    </article>
+    <article class="card"><div class="body">
+      <h2>Formulario de adopción</h2>
+      <form id="adoptionForm">
+        <label>Tu nombre<input id="adopterName" data-testid="adopter-name"></label>
+        <label>Mascota seleccionada<input id="petName" data-testid="pet-name"></label>
+        <label>Teléfono<input id="adopterPhone" data-testid="adopter-phone"></label>
+        <label>Comentario<textarea id="adopterComment" data-testid="adopter-comment"></textarea></label>
+        <button type="submit" data-testid="adoption-submit">Enviar solicitud</button>
+      </form>
+      <div class="state" id="adoptionResult" data-testid="adoption-state">Aún no hay solicitud.</div>
+    </div></article>
+  </section>
+
+  <section id="checkout" class="grid-2">
+    <article class="card"><div class="body">
+      <h2>Carrito de compras</h2>
+      <div id="cartItems" data-testid="cart-items"></div>
+      <p><strong>Total:</strong> <span id="cartTotal" data-testid="cart-total">S/ 0.00</span></p>
+    </div></article>
+
+    <article class="card"><div class="body">
+      <h2>Pagar pedido</h2>
+      <form id="checkoutForm">
+        <label>Método de pago
+          <select id="paymentMethod" data-testid="payment-method">
+            <option value="cash">Efectivo contra entrega</option>
+            <option value="card">Tarjeta</option>
+            <option value="points">Happy Pet Puntos</option>
+          </select>
+        </label>
+        <div id="cardBox" class="hidden">
+          <label>Número de tarjeta/cuenta<input id="cardNumber" data-testid="card-number" placeholder="Ingresa número de prueba"></label>
+        </div>
+        <button type="submit" data-testid="checkout-submit">Procesar pago</button>
+      </form>
+      <div class="state" id="checkoutResult" data-testid="checkout-result">Pendiente de pago.</div>
+    </div></article>
+  </section>
+</main>
+<footer>Happy Pet playground · ideal para Selenium, Playwright, Cypress o WebDriverIO.</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
